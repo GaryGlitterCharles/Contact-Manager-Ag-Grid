@@ -1,5 +1,11 @@
 Contact Manager Application with Ag-Grid
 
-http:/4200/contact-manager --For Contact Manager
+Steps to run the project,
 
-http://4200/Ag-Grid/gridView --for Ag-Grid 
+1. Open terminal.
+2. npm install.
+3. npm start
+
+http://localhost:4200/contact-manager  --For Contact Manager
+
+http://localhost:4200/Ag-Grid/gridView  --for Ag-Grid 

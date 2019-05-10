@@ -1,0 +1,44 @@
+<div class='container'>
+<ag-grid-angular 
+    #agGrid
+    style="width: 1120px; height: 600px;" 
+    class="ag-theme-material"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [animateRows]="true"
+    rowSelection="multiple" 
+    [paginationAutoPageSize]="true"
+    [pagination]="true"
+    [sideBar]="true"
+    [statusBar]="statusBar"
+    [rowDragManaged]="true"
+    (gridReady)="onGridReady($event)"
+    >
+</ag-grid-angular>
+<div class='button'>
+
+    <button (click)="showAthlete(show)" mat-raised-button >Hide Code
+        
+    </button>
+    <button mat-raised-button (click)="goToFirstPage()">
+        <i class="material-icons">keyboard_arrow_left </i>
+        First Page
+    </button>
+    <button mat-raised-button (click)="goToLastPage()">Last Page
+        <i class="material-icons">keyboard_arrow_right </i>
+    </button>
+    
+</div>
+</div>
+<div class="ag-cell-label-container" role="presentation">
+    <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>
+    <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+        <span ref="eText" class="ag-header-cell-text" role="columnheader"></span>
+        <span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>
+        <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>
+        <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon" ></span>
+        <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon" ></span>
+        <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon" ></span>
+    </div>
+</div>

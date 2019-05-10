@@ -1,0 +1,28 @@
+<mat-toolbar color='primary'>
+  <button mat-button (click)='toggleEvent.emit()' class='Buton-hide'>
+    <mat-icon>menu</mat-icon>
+  </button>
+  Contact Manager
+  <span class="example-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)='dialogOpen()'>
+      <mat-icon>contacts</mat-icon>
+      <span>New Contact</span>
+    </button>
+
+    <button mat-menu-item (click)='toggSide.emit()'>
+      <!-- <i class="material-icons">swap_horiz</i> -->
+      <mat-icon>flip</mat-icon>
+      <span>Toggle SideNav</span>
+    </button>
+
+    <button mat-menu-item (click)='toggleTheme.emit()'>
+        <mat-icon>style</mat-icon>
+        <span>Theme</span>
+      </button>
+  </mat-menu>
+
+</mat-toolbar>

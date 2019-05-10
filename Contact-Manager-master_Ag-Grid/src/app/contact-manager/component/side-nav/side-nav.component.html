@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sideNav-container" [dir]='dir' [class.dark-theme]='darkTheme'>
+    <mat-sidenav #sidenav [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()"
+        class="mat-elevation-z10  sizeOf">
+        <mat-toolbar color='primary'>My App</mat-toolbar>
+        <mat-nav-list>
+
+            <mat-list-item *ngFor="let user of displayDetails | async ">
+
+                <a matLine [routerLink]="['/contact-manager',user?.id]">{{ user?.name }}</a>
+                <mat-icon svgIcon="{{user?.avatar}}"></mat-icon>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <app-tool-bar (toggleEvent)="sidenav.toggle()" 
+                    (toggSide)="togSideFun()"
+                    (toggleTheme) = "togTheme()"
+                    ></app-tool-bar>
+        <div class='mainContent-margin'>
+
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
